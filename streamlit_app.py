@@ -41,8 +41,9 @@ if __name__ == "__main__":
     if btn:
         if image is not None:
             st.image(image)
-            temp_file.write(image.getvalue())
-            pred = predict(temp_file.name)
-            st.success("The predicted disease is {}".format(class_names[pred]))
+            with st.spinner("Analyzing..."):
+                temp_file.write(image.getvalue())
+                pred = predict(temp_file.name)
+                st.success("##### The predicted disease is {}".format(class_names[pred]))
         else:
             st.error("Please upload an image")
