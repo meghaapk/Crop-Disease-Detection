@@ -15,7 +15,6 @@ class_names = ["Early Blight", "Late Blight", "Healthy"]
 #     return model
 
 def predict(image):
-    # my_img = Image.open(image)
     my_img = tf.keras.utils.load_img(image, target_size=(256, 256))
     img_array = tf.keras.utils.img_to_array(my_img)
     img_array = tf.expand_dims(img_array, 0)
@@ -25,17 +24,13 @@ def predict(image):
     return pred
 
 if __name__ == "__main__":
-    #Ask option to upload image or capture image
     option = st.sidebar.selectbox("Select an option", ["Upload Image", "Capture Image"])
     if option == "Upload Image":
         image = st.sidebar.file_uploader("Upload an image", type=["jpg", "png"])
     elif option == "Capture Image":
         image = st.sidebar.camera_input("Upload an image")
-    # image = st.sidebar.camera_input("Upload an image")
-    # image = st.sidebar.file_uploader("Upload a file", type=["jpg", "png", "jpeg"])
+   
     temp_file = NamedTemporaryFile(delete=False)
-    # if image is not None:
-    #         temp_file.write(image.getvalue())
     btn = st.sidebar.button("Predict")
 
     if btn:
