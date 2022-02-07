@@ -29,11 +29,9 @@ if __name__ == "__main__":
         image = st.sidebar.file_uploader("Upload an image", type=["jpg", "png"])
     elif option == "Capture Image":
         image = st.sidebar.camera_input("Upload an image")
-   
-    temp_file = NamedTemporaryFile(delete=False)
-    btn = st.sidebar.button("Predict")
 
-    if btn:
+    temp_file = NamedTemporaryFile(delete=False)
+    if btn := st.sidebar.button("Predict"):
         if image is not None:
             st.image(image)
             with st.spinner("Analyzing..."):
