@@ -46,6 +46,7 @@ if __name__ == "__main__":
             with st.spinner("Analyzing..."):
                 temp_file.write(image.getvalue())
                 pred = predict(temp_file.name)
+                st.balloons()
                 st.success("##### The predicted disease is {}".format(class_names[pred]))
         else:
             st.error("Please upload an image")
