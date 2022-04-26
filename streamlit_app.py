@@ -5,7 +5,7 @@ from tempfile import NamedTemporaryFile
 
 st.set_page_config(page_title="Crop Disease Identification", layout="wide", page_icon="🌱")
 st.header("Crop Disease Identification")
-st.write("Created by [Megha](https://github.com/meghaapk).")
+st.write("Created by [Maggy](https://github.com/meghaapk).")
 st.subheader("This app predicts the disease of the crop. Add a proper description here.")
 class_names = ["Early Blight", "Late Blight", "Healthy"]
 
