@@ -48,7 +48,7 @@ if __name__ == "__main__":
     st.write("##### You selected: {}".format(crop))
     option = st.sidebar.selectbox("Select an option", ["Upload Image", "Capture Image"])
     if option == "Upload Image":
-        image = st.sidebar.file_uploader("Upload an image", type=["jpg", "png"])
+        image = st.sidebar.file_uploader("Upload an image", type=["jpg", "png","webp"])
     elif option == "Capture Image":
         image = st.sidebar.camera_input("Upload an image")
 
