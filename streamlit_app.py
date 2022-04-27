@@ -31,7 +31,7 @@ def load_model():
     elif crop == "Potato":
         return tf.keras.models.load_model('models/potatoes.h5'),["Early Blight Disease", "Late Blight Disease", "Healthy"]
     else:
-        return tf.keras.models.load_model('models/tomatoes.h5'),['Tomato Early Blight Disease', 'Tomato Late Blight Disease', 'Tomato_healthy']
+        return tf.keras.models.load_model('models/tomatoes.h5'),['Tomato Early Blight Disease', 'Tomato Late Blight Disease', 'Tomato healthy']
 
 def predict(image):
     my_img = tf.keras.utils.load_img(image, target_size=(256, 256))
